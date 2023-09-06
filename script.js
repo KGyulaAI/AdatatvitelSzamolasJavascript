@@ -17,12 +17,17 @@ function AtviteliIdoSzamitas(){
         atviteliMennyiseg = atviteliMennyiseg * 1000 * 1000 * 1000;
     }
 
-    if (document.getElementById("atviteliSebessegSelect").value == "mb/s") {
+    if (document.getElementById("atviteliSebessegSelect").value == "MB/s") {
         atviteliSebesseg = atviteliSebesseg * 1000;
     }
-    if (document.getElementById("atviteliSebessegSelect").value == "gb/s") {
+    if (document.getElementById("atviteliSebessegSelect").value == "GB/s") {
         atviteliSebesseg = atviteliSebesseg * 1000 * 1000;
     }
 
-    document.getElementById("atviteliIdoSzam").innerHTML = atviteliMennyiseg / atviteliSebesseg;
+    let eredmeny = atviteliMennyiseg / atviteliSebesseg;
+    let ora = Math.floor(eredmeny / 3600);
+    let perc = Math.floor(eredmeny % 3600 / 60);
+    let masodperc = Math.floor(eredmeny % 3600 % 60);
+
+    document.getElementById("atviteliIdoSzam").innerHTML = ora + " Óra " + perc + " Perc " + masodperc + " Másodperc";
 }

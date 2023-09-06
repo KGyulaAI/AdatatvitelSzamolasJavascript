@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adatátvitel számolás</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <label for="atviteliMennyiseg">Átviteli mennyiség:</label>
+    <input type="text" id="atviteliMennyiseg" name="atviteliMennyiseg">
+    <select name="atviteliMennyisegSelect" id="atviteliMennyisegSelect">
+        <option value="KB">KB</option>
+        <option value="MB">MB</option>
+        <option value="GB">GB</option>
+        <option value="TB">TB</option>
+    </select><br><br>
+    <label for="atviteliSebesseg">Átviteli sebesség:</label>
+    <input type="range" value="0" min="0" max="1000" id="atviteliSebesseg" name="atviteliSebesseg" onchange="AtviteliSebessegValtozas()">
+    <span id="atviteliSebessegSzam">0</span>
+    <select name="atviteliSebessegSelect" id="atviteliSebessegSelect">
+        <option value="kb/s">kb/s</option>
+        <option value="mb/s">mb/s</option>
+        <option value="gb/s">gb/s</option>
+    </select><br><br>
+    <span>Átviteli idő:</span>
+    <span id="atviteliIdoSzam">0</span>
+    <span> s</span><br><br>
+    <button onclick="AtviteliIdoSzamitas()">Számítás</button>
+</body>
+</html>
